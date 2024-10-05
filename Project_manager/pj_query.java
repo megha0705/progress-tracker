@@ -6,4 +6,8 @@ public class pj_query {
     String insert = "INSERT INTO projects(project_name) VALUES (?)";
     return insert;
    }
+  public static String getPJ(){
+   String pj_name_id = "SELECT * FROM projects";
+   return pj_name_id;
+  }
 }
