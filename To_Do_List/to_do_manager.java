@@ -7,23 +7,21 @@ public class to_do_manager {
     
     java.sql.Date timelimit;
     int project_id;
-   public to_do_manager( String taskName, String taskDescription, java.sql.Date timelimit,int project_id){
-    
+   public to_do_manager(int project_id, String taskName, String taskDescription, java.sql.Date timelimit){
+        this.project_id = project_id;
+
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         
         this.timelimit = timelimit;
-        this.project_id = project_id;
-        addTask();
+        
     }
   
    
 
 
 
-    public void addTask(){
-        System.out.println("task added"+ taskName);
-    }
+    
     public String getName(){
         return taskName;
     }
