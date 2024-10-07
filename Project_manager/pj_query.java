@@ -14,4 +14,9 @@ public class pj_query {
     String joinPjTask = "SELECT p.project_id, p.project_name, t.project_id,  t.taskName, t.taskDescription ,t.timelimit FROM task t INNER JOIN projects p ON p.project_id = t.project_id";
     return joinPjTask;
   }
+  public static String selectId(){
+    String selectWithId = "SELECT p.project_id, p.project_name, t.project_id,  t.taskName, t.taskDescription ,t.timelimit FROM task t INNER JOIN projects p ON p.project_id = t.project_id WHERE p.project_id = ?";
+    return selectWithId;
+  }
+
 }

@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 import java.util.*;
-import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import To_Do_List.to_do_manager;
@@ -47,21 +44,42 @@ class app{
 */
 
 //SELECT BOTH TABLES;
-System.out.println("write 'select' to see the entire table");
+/*System.out.println("write 'select all' to see the entire table");
 String str = sc.nextLine();
-if(str.equals("select")){
-HashMap<pj_manager, List<to_do_manager>> hm = new HashMap<>(to_do_list_connector.selectEntirePjTask());
-for(Entry<pj_manager , List<to_do_manager>> entry : hm.entrySet()){
-pj_manager project = entry.getKey();
-System.out.println("projects=" + project);
+if(str.equals("select all")){
+    HashMap<pj_manager, List<to_do_manager>> hm = new HashMap<>(to_do_list_connector.selectEntirePjTask());
+    for(Entry<pj_manager , List<to_do_manager>> entry : hm.entrySet()){
+        pj_manager project = entry.getKey();
 
-List<to_do_manager> tasks = entry.getValue();
-for(to_do_manager task : tasks){
-    System.out.println("tasks =" + task);
+        System.out.println(project);
+
+    List<to_do_manager> tasks = entry.getValue();
+    for(to_do_manager task : tasks){
+        System.out.println(task);
+    }
+    }
+}*/
+  
+//select specific rows
+System.out.println("you wanna select a perticular row of a table ?");
+String str2 = sc.nextLine();
+if(str2.equals("yes")){
+    System.out.println("provide the project id of the row u wanna select");
+    int pj_id = sc.nextInt();
+    pj_manager pj = new pj_manager(pj_id);
+    HashMap<pj_manager , List<to_do_manager>> map = new HashMap<>(to_do_list_connector.selectWithId(pj));
+
+    System.out.println("id is successfully set");
+    for(Entry<pj_manager , List<to_do_manager>> e : map.entrySet()){
+        pj_manager project = e.getKey();
+        System.out.println(project);
+        List<to_do_manager> tasks = e.getValue();
+        for(to_do_manager task : tasks){
+            System.out.println(task);
+        }
+    }
 }
-}
-}
-        
 
     }
+    
 }

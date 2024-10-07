@@ -1,11 +1,16 @@
 package Project_manager;
 import java.util.*;
+
+
+import java.sql.PreparedStatement;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import database.DB_Connection;
 import To_Do_List.to_do_manager;
 public class to_do_list_connector {
+    //select entire table
     public static HashMap<pj_manager, List<to_do_manager>> selectEntirePjTask(){
         HashMap<pj_manager, List<to_do_manager>> map = new HashMap<>();
 
@@ -31,5 +36,31 @@ public class to_do_list_connector {
         
         return map;
     
+    }
+
+    // select any rows with project id;
+    public static HashMap<pj_manager , List<to_do_manager>> selectWithId(pj_manager p){
+        HashMap<pj_manager , List<to_do_manager>> hm = new HashMap<>();
+        try{
+            Connection conn = DB_Connection.connect();
+            String selectId = pj_query.selectId();
+            PreparedStatement pstm = conn.prepareStatement(selectId);
+            pstm.setInt(1, p.getPjId());
+            ResultSet rs = pstm.executeQuery();
+            while(rs.next()){
+                pj_manager projects = new pj_manager(rs.getInt(1), rs.getString(2));
+                ArrayList<to_do_manager> arr = new ArrayList<>();
+                to_do_manager tdm = new to_do_manager(rs.getInt(3),rs.getString(4),rs.getString(5), rs.getDate(6));
+                arr.add(tdm);
+                if(hm.containsKey(projects)){
+                    hm.get(projects).add(tdm);
+                }else{
+                    hm.put(projects, arr);
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return hm;
     }
 }

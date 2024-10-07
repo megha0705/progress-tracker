@@ -17,9 +17,6 @@ public class to_do_manager {
         
     }
   
-   
-
-
 
     
     public String getName(){
@@ -35,4 +32,8 @@ public class to_do_manager {
     public int getProjectId(){
         return project_id;
     }
+    @Override
+public String toString() {
+    return "Project id: " + this.project_id + ", task name: " + this.taskName + ", task description: "+ this.taskDescription+", time limit: " + this.timelimit;
+}
 }
