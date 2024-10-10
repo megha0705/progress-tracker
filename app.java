@@ -12,7 +12,7 @@ class app{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-      /*     System.out.println("enter project name ");
+          System.out.println("enter project name ");
         String projectName = sc.nextLine();
         pj_manager pj = new pj_manager(projectName);
         try{
@@ -24,16 +24,18 @@ class app{
             e.printStackTrace();
         }
 
-*/
+
  
- /*        System.out.println("enter task name , description , time limit , project_id");
+         System.out.println("enter task name , description , time limit , project_id");
         String taskName = sc.nextLine();
         String taskDescriptionn = sc.nextLine();
         String timeLimitStr = sc.nextLine();
         Date timeLimit = Date.valueOf(timeLimitStr);
         int project_id = sc.nextInt();
         sc.nextLine();
-        to_do_manager manager = new to_do_manager(taskName, taskDescriptionn, timeLimit, project_id);
+        to_do_manager manager = new to_do_manager(project_id,taskName, taskDescriptionn, timeLimit );
+        
+        
         try{
             System.out.println("try to add the data");
         to_do_DB_connector.insertTask(manager);
@@ -41,7 +43,7 @@ class app{
         }catch(Exception e){
             e.printStackTrace();
         }
-*/
+//to update the status
 
 //SELECT BOTH TABLES;
 /*System.out.println("write 'select all' to see the entire table");
@@ -59,7 +61,7 @@ if(str.equals("select all")){
     }
     }
 }*/
-  
+  /*  
 //select specific rows
 System.out.println("you wanna select a perticular row of a table ?");
 String str2 = sc.nextLine();
@@ -78,7 +80,7 @@ if(str2.equals("yes")){
             System.out.println(task);
         }
     }
-}
+}*/
 
     }
     
