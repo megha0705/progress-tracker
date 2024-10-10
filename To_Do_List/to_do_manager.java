@@ -4,21 +4,28 @@ public class to_do_manager {
 
     String taskName;
     String taskDescription;
-    
+    String status;
     java.sql.Date timelimit;
     int project_id;
    public to_do_manager(int project_id, String taskName, String taskDescription, java.sql.Date timelimit){
         this.project_id = project_id;
-
         this.taskName = taskName;
         this.taskDescription = taskDescription;
-        
         this.timelimit = timelimit;
+        this.status = "pending";
         
     }
-  
+  public to_do_manager (String status){
+    this.status = status;
+  }
 
-    
+    public String setStatus(){
+        if(status.equals("compelted")){
+            this.status = "completed";
+        }
+        return this.status;
+        
+    }
     public String getName(){
         return taskName;
     }
