@@ -12,20 +12,19 @@ public class to_do_manager {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.timelimit = timelimit;
-        this.status = "pending";
         
+        
+    }
+    public to_do_manager(int project_id){
+        this.project_id = project_id;
     }
   public to_do_manager (String status){
     this.status = status;
   }
 
-    public String setStatus(){
-        if(status.equals("compelted")){
-            this.status = "completed";
-        }
-        return this.status;
-        
-    }
+  public void setStatus(String status) {
+    this.status = status;
+}
     public String getName(){
         return taskName;
     }

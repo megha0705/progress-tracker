@@ -12,7 +12,7 @@ class app{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-          System.out.println("enter project name ");
+        /*    System.out.println("enter project name ");
         String projectName = sc.nextLine();
         pj_manager pj = new pj_manager(projectName);
         try{
@@ -33,7 +33,7 @@ class app{
         Date timeLimit = Date.valueOf(timeLimitStr);
         int project_id = sc.nextInt();
         sc.nextLine();
-        to_do_manager manager = new to_do_manager(project_id,taskName, taskDescriptionn, timeLimit );
+        to_do_manager manager = new to_do_manager(project_id,taskName, taskDescriptionn, timeLimit);
         
         
         try{
@@ -42,8 +42,12 @@ class app{
             System.out.println("data is succesfully added to the task");
         }catch(Exception e){
             e.printStackTrace();
-        }
+        }*/
 //to update the status
+System.out.println("write the project id of the status u wanna update");
+int n = sc.nextInt();
+to_do_manager tdm = new to_do_manager(n);
+to_do_DB_connector.updateStatus(tdm);
 
 //SELECT BOTH TABLES;
 /*System.out.println("write 'select all' to see the entire table");
