@@ -42,12 +42,12 @@ class app{
             System.out.println("data is succesfully added to the task");
         }catch(Exception e){
             e.printStackTrace();
-        }*/
+        }
 //to update the status
 System.out.println("write the project id of the status u wanna update");
 int n = sc.nextInt();
 to_do_manager tdm = new to_do_manager(n);
-to_do_DB_connector.updateStatus(tdm);
+to_do_DB_connector.updateStatus(tdm);*/
 
 //SELECT BOTH TABLES;
 /*System.out.println("write 'select all' to see the entire table");
@@ -86,6 +86,20 @@ if(str2.equals("yes")){
     }
 }*/
 
+int m = 10;
+int r = 9;
+System.out.println("progress bar : ");
+System.out.print("[ ");
+
+for(int i = 0; i < m; i++){
+    if(i < r){
+        System.out.print("X");
+
+    }else{
+        System.out.print("-");
+    }
+}
+System.out.print("]" + r*10 + "%");
     }
     
 }
