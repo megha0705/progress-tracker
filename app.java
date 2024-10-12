@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.Map.Entry;
-
+import progress_bar.*;
 import To_Do_List.to_do_manager;
 import Project_manager.pj_manager;
 import Project_manager.pj_manager_DB_connector;
@@ -47,7 +47,7 @@ class app{
 System.out.println("write the project id of the status u wanna update");
 int n = sc.nextInt();
 to_do_manager tdm = new to_do_manager(n);
-to_do_DB_connector.updateStatus(tdm);*/
+to_do_DB_connector.updateStatus(tdm);
 
 //SELECT BOTH TABLES;
 /*System.out.println("write 'select all' to see the entire table");
@@ -85,7 +85,7 @@ if(str2.equals("yes")){
         }
     }
 }*/
-
+/*   
 int m = 10;
 int r = 9;
 System.out.println("progress bar : ");
@@ -99,7 +99,14 @@ for(int i = 0; i < m; i++){
         System.out.print("-");
     }
 }
-System.out.print("]" + r*10 + "%");
+System.out.print("]" + r*10 + "%");*/
+
+//PROGRESS BAR
+System.out.println("provide the project_id of the project");
+int pjId = sc.nextInt();
+to_do_manager tdm = new to_do_manager(pjId);
+progress_DB_Connector.pj_progress(tdm);
+
     }
     
 }
