@@ -86,26 +86,27 @@ if(str2.equals("yes")){
     }
 }*/
 /*   
+*/
+
+//PROGRESS BAR
+System.out.println("provide the project_id of the project");
+int pjId = sc.nextInt();
+to_do_manager tdm = new to_do_manager(pjId);
+double percentage  = progress_DB_Connector.pj_progress(tdm);
 int m = 10;
-int r = 9;
+//int r = 9;
 System.out.println("progress bar : ");
-System.out.print("[ ");
+System.out.print("[");
 
 for(int i = 0; i < m; i++){
-    if(i < r){
+    if(i < percentage){
         System.out.print("X");
 
     }else{
         System.out.print("-");
     }
 }
-System.out.print("]" + r*10 + "%");*/
-
-//PROGRESS BAR
-System.out.println("provide the project_id of the project");
-int pjId = sc.nextInt();
-to_do_manager tdm = new to_do_manager(pjId);
-progress_DB_Connector.pj_progress(tdm);
+System.out.print("]" + percentage*10 + "%");
 
     }
     
