@@ -1,24 +1,13 @@
-
 package Project_manager;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-
 import java.sql.Statement;
-
-import java.lang.reflect.Array;
-
-
-
-import java.sql.SQLException;
-
-
 import database.DB_Connection;
 
 public class pj_manager_DB_connector{  
    
-
     public static void insertion(pj_manager p){
         try{
             Connection conn = DB_Connection.connect();
