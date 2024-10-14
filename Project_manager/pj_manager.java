@@ -1,8 +1,10 @@
 package Project_manager;
 
 public class pj_manager {
+    //intialization of project table columns
     String project_name;
     int project_id;
+    //constructors
    public  pj_manager(String project_name){
     this.project_name = project_name;
     
@@ -17,6 +19,7 @@ public class pj_manager {
    public static void  addPj(){
     System.out.println("project name is added to the table");
    }
+   ///getters
    public  String getPjName(){
     return project_name;
    }
