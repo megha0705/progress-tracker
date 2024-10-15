@@ -18,6 +18,7 @@ class app{
     case 1 :
         //projject table
         System.out.println("enter project name ");
+        sc.nextLine();
         String projectName = sc.nextLine();
         pj_manager pj = new pj_manager(projectName);
         try{
@@ -47,11 +48,12 @@ class app{
         break;
     case 2: 
         
-        System.out.println("enter task name , description , time limit , project_id");
-        String taskNa = sc.nextLine();
-        String taskDescription = sc.nextLine();
+        System.out.println("enter  time limit , task name , description  , project_id");
+        sc.nextLine();
         String timeLimitSt = sc.nextLine();
         Date timelimit = Date.valueOf(timeLimitSt);
+        String taskNa = sc.nextLine();
+        String taskDescription = sc.nextLine();
         int projectid = sc.nextInt();
         sc.nextLine();
         to_do_manager mng = new to_do_manager(projectid,taskNa, taskDescription, timelimit);
@@ -84,9 +86,11 @@ class app{
     case 4 :
 
     System.out.println("you wanna select a perticular row of a table ?");
+    sc.nextLine();
     String str2 = sc.nextLine();
     if(str2.equals("yes")){
     System.out.println("provide the project id of the row u wanna select");
+    
     int pj_id = sc.nextInt();
     pj_manager PJ = new pj_manager(pj_id);
     HashMap<pj_manager , List<to_do_manager>> map = new HashMap<>(to_do_list_connector.selectWithId(PJ));

@@ -6,9 +6,12 @@ public class to_do_query {
     String insert = "INSERT INTO task(taskName, taskDescription,timelimit,project_id, status) VALUES (?,?,?,?, 'pending')";
     return insert;
    }
-   //query for updating the status to complete and record the completion time
+  /* public static String updateCompletion_time(){
+      String com_time = "UPDATE task SET "
+   }*/
+   //query for updating the status to complete / incomplete based on th completion time;
    public static String updateStatus(){
-      String update = "UPDATE task SET status = 'complete', completion_time = CURRENT_TIMESTAMP  WHERE taskNo = ?";
+      String update = "UPDATE task SET  completion_time = CURRENT_TIMESTAMP , status = CASE  WHEN DATE(CURRENT_TIMESTAMP)> timelimit THEN 'incomplete' ELSE 'complete' END WHERE taskNo = ?";
       return update;
    }
 }
